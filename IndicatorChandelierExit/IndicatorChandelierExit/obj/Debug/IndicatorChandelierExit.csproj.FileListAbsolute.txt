@@ -1,0 +1,12 @@
+D:\Quantower\Settings\Scripts\Indicators\IndicatorChandelierExit\IndicatorChandelierExit.deps.json
+D:\Quantower\Settings\Scripts\Indicators\IndicatorChandelierExit\IndicatorChandelierExit.dll
+D:\Quantower\Settings\Scripts\Indicators\IndicatorChandelierExit\IndicatorChandelierExit.pdb
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.csproj.AssemblyReference.cache
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.AssemblyInfoInputs.cache
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.AssemblyInfo.cs
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.csproj.CoreCompileInputs.cache
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.dll
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\refint\IndicatorChandelierExit.dll
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\IndicatorChandelierExit.pdb
+D:\Indicators\IndicatorChandelierExit\IndicatorChandelierExit\obj\Debug\ref\IndicatorChandelierExit.dll
