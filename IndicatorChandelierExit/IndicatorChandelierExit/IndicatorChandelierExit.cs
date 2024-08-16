@@ -18,6 +18,10 @@ namespace IndicatorChandelierExit
         public int Period = 22;
         [InputParameter("ATR Multiplier", 0, 1, 9999)]
         public double multipl = 3;
+	[InputParameter("Chandelier short")]
+        public bool ceshort = false;
+        [InputParameter("Chandelier long")]
+        public bool celong = false;
 
         public override string ShortName => $"CE ({this.Period}; {this.multipl})";
 
@@ -50,21 +54,28 @@ namespace IndicatorChandelierExit
         {
             longStopPrev = longStop;
             longStop = High() - atr.GetValue() * multipl;
-            if (GetPrice(PriceType.Close) > longStopPrev)
-	        longStop = Math.Max(longStop, longStopPrev);
 
             shortStopPrev = shortStop;
             shortStop = Low() + atr.GetValue() * multipl;
-            if (GetPrice(PriceType.Close) < shortStopPrev)
-	        shortStop = Math.Min(shortStop, shortStopPrev);
-
+            if (celong==false&&GetPrice(PriceType.Close) > longStopPrev)
+                longStop = Math.Max(longStop, longStopPrev);
+            if (ceshort == false&&GetPrice(PriceType.Close) < shortStopPrev)
+                shortStop = Math.Min(shortStop, shortStopPrev);
             if (GetPrice(PriceType.Close) > shortStopPrev)
                 dir = 1;
             else if (GetPrice(PriceType.Close) < longStopPrev)
                 dir = -1;
-
-            if (dir == 1) SetValue(longStop, 1);
-            else SetValue(shortStop, 0);
+            if(celong==true)
+                SetValue(longStop, 1);
+            if(ceshort==true)
+                SetValue(shortStop, 0);
+            if(celong==false&&ceshort==false)
+            {
+                if (dir == 1)
+                    SetValue(longStop, 1);
+                else
+                    SetValue(shortStop, 0);
+            }
         }
     }
 }
