@@ -31,8 +31,8 @@ namespace IndicatorChandelierExit
             Name = "Chandelier Exit";
             Description = "The Chandelier Exit is a popular tool among traders used to help determine appropriate stop loss levels.";
 
-            AddLineSeries("Sell", Color.Red, 1, LineStyle.Solid);
-            AddLineSeries("Buy", Color.Green, 1, LineStyle.Solid);
+            AddLineSeries("Sell", Color.Red, 2, LineStyle.Solid);
+            AddLineSeries("Buy", Color.Green, 2, LineStyle.Solid);
 
             SeparateWindow = false;
         }
@@ -50,19 +50,21 @@ namespace IndicatorChandelierExit
         {
             longStopPrev = longStop;
             longStop = High() - atr.GetValue() * multipl;
-            longStop = (GetPrice(PriceType.Close) > longStopPrev) ? Math.Max(longStop, longStopPrev) : longStop;
+            if (GetPrice(PriceType.Close) > longStopPrev)
+	        longStop = Math.Max(longStop, longStopPrev);
 
             shortStopPrev = shortStop;
             shortStop = Low() + atr.GetValue() * multipl;
-            shortStop = (GetPrice(PriceType.Close) < shortStopPrev) ? Math.Min(shortStop, shortStopPrev) : shortStop;
+            if (GetPrice(PriceType.Close) < shortStopPrev)
+	        shortStop = Math.Min(shortStop, shortStopPrev);
 
             if (GetPrice(PriceType.Close) > shortStopPrev)
                 dir = 1;
             else if (GetPrice(PriceType.Close) < longStopPrev)
                 dir = -1;
 
-            if (dir == 1) SetValue(longStopPrev, 1);
-            else SetValue(shortStopPrev, 0);
+            if (dir == 1) SetValue(longStop, 1);
+            else SetValue(shortStop, 0);
         }
     }
 }
