@@ -1,14 +1,8 @@
 // Copyright QUANTOWER LLC. © 2017-2023. All rights reserved.
 
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using TradingPlatform.BusinessLayer;
-using static System.Net.Mime.MediaTypeNames;
-using TradingPlatform.BusinessLayer.Integration;
-using TradingPlatform.BusinessLayer.Utils;
-using TradingPlatform.BusinessLayer.Chart;
 
 namespace IndicatorChandelierExit
 {
